@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stratus Partners | Cloud & DevOps Consulting for Africa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Stratus Partners is a UK-registered, Africa-focused cloud and DevOps consultancy. Our team has delivered for HSBC, PayPal, AWS, Bank of England, and the European Central Bank." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --bg-dark: #1a1a2e;
+      --bg-darker: #0f0f1a;
+      --bg-card: #ffffff;
+      --accent: #6b21a8;
+      --accent-light: #a855f7;
+      --accent-soft: rgba(107, 33, 168, 0.08);
+      --orange: #f97316;
+      --text: #1a1a2e;
+      --text-secondary: #64748b;
+      --text-light: #f8fafc;
+      --text-light-muted: #94a3b8;
+      --border: #e2e8f0;
+      --border-dark: #2d2d44;
+      --font-serif: 'Syne', sans-serif;
+      --font-sans: 'Montserrat', -apple-system, sans-serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width: 1200px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ========== TYPOGRAPHY HIERARCHY (CreateFuture Style) ========== */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* Display / Hero - 80px like CreateFuture */
+    h1, .display-1 {
+      font-size: clamp(60px, 8vw, 80px);
+      font-weight: 700;
+      line-height: 1.23;
+      letter-spacing: -0.44px;
+    }
+
+    /* Section titles - 40px like CreateFuture */
+    h2 {
+      font-size: clamp(34px, 4vw, 40px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.44px;
+    }
+
+    /* Card/Feature titles - 25px like CreateFuture */
+    h3 {
+      font-size: clamp(20px, 2.5vw, 25px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.275px;
+    }
+
+    /* Smaller headings */
+    h4 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.33;
+    }
+
+    h5 {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    h6 {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.83;
+      letter-spacing: 0.36px;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 1.25rem; }
+    }
+
+    /* ========== HEADER ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .logo-icon::after {
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      top: 8px;
+      right: 8px;
+    }
+
+    .logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .header-cta {
+      padding: 0.6rem 1.25rem;
+      background: var(--text);
+      color: var(--text-light);
+      font-weight: 500;
+      font-size: 0.875rem;
+      border-radius: 6px;
+      transition: all var(--transition);
+    }
+
+    .header-cta:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 900px) {
+      nav { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .header-cta { display: none; }
+    }
+
+    /* ========== HERO (Clean Professional) ========== */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 2rem 100px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f0f9ff 0%, #faf5ff 50%, #fdf4ff 100%);
+    }
+
+    .hero-waves {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-waves svg {
+      position: absolute;
+      bottom: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140%;
+      min-width: 1200px;
+      height: auto;
+      opacity: 0.9;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 32px;
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 5.5vw, 64px);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--text);
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+    }
+
+    .hero-desc {
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 48px;
+      max-width: 580px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 36px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #ffffff;
+      background: var(--text);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 4rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.75rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-radius: 6px;
+      transition: all var(--transition);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--text-light);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(107, 33, 168, 0.25);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text);
+      background: rgba(0,0,0,0.02);
+    }
+
+    .btn-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(3px);
+    }
+
+    /* Experience logos */
+    .hero-experience {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    /* ========== CLIENT LOGOS ========== */
+    .client-logos {
+      background: linear-gradient(135deg, #1a0a2e 0%, #16082a 50%, #0d0515 100%);
+      padding: 5rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .client-logos::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 50%, rgba(107, 33, 168, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .logos-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem 4rem;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .client-logo {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: 0.02em;
+      transition: color var(--transition);
+    }
+
+    .client-logo:hover {
+      color: #fff;
+    }
+
+    .logos-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logos-cta span {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .logos-cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .logos-cta-btn:hover {
+      background: #fff;
+      color: #0a0a0a;
+      border-color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .logos-grid {
+        gap: 2rem 3rem;
+      }
+      .client-logo {
+        font-size: 1rem;
+      }
+    }
+
+    /* ========== SECTIONS ========== */
+    section { padding: 6rem 0; }
+
+    @media (max-width: 640px) {
+      section { padding: 4rem 0; }
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header.centered { text-align: center; }
+
+    .section-label {
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.36px;
+      line-height: 1.83;
+      color: var(--accent);
+      margin-bottom: 32px;
+      font-family: var(--font-body);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 4vw, 40px);
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.44px;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      letter-spacing: 0.14px;
+      max-width: 600px;
+    }
+
+    .section-header.centered .section-desc {
+      margin: 0 auto;
+    }
+
+    /* ========== INTRO / STORY ========== */
+    .intro {
+      background: var(--bg);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .intro-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .intro-content p {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      letter-spacing: 0.14px;
+      margin-bottom: 14px;
+    }
+
+    .intro-content p:last-of-type { margin-bottom: 0; }
+
+    .intro-content strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .intro-quote {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      padding: 2.5rem;
+      border-radius: 16px;
+      position: relative;
+    }
+
+    .intro-quote::before {
+      content: '"';
+      font-family: var(--font-serif);
+      font-size: 6rem;
+      color: var(--accent-light);
+      opacity: 0.3;
+      position: absolute;
+      top: 0.5rem;
+      left: 1.5rem;
+      line-height: 1;
+    }
+
+    .intro-quote blockquote {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
+      font-style: normal;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .intro-quote cite {
+      font-size: 0.9rem;
+      color: var(--text-light-muted);
+      font-style: normal;
+      display: block;
+    }
+
+    /* ========== INDUSTRIES (like CreateFuture) ========== */
+    .industries {
+      background: var(--bg);
+    }
+
+    .industries-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .industries-layout { grid-template-columns: 1fr; }
+    }
+
+    .industry-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .industry-nav-item {
+      padding: 0.75rem 0;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition);
+      border-left: 3px solid transparent;
+      padding-left: 1rem;
+      margin-left: -1rem;
+    }
+
+    .industry-nav-item:hover,
+    .industry-nav-item.active {
+      color: var(--text);
+      border-left-color: var(--accent);
+    }
+
+    .industry-feature {
+      background: var(--bg-dark);
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      .industry-feature { grid-template-columns: 1fr; }
+    }
+
+    .industry-feature-img {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--bg-darker) 100%);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .industry-stat {
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    .industry-stat-number {
+      font-family: var(--font-serif);
+      font-size: clamp(60px, 10vw, 100px);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1;
+    }
+
+    .industry-stat-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-light-muted);
+    }
+
+    .industry-feature-content {
+      padding: 2.5rem;
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .industry-feature-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      background: rgba(168, 85, 247, 0.2);
+      color: var(--accent-light);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+
+    .industry-feature-title {
+      font-family: var(--font-serif);
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      letter-spacing: 0.275px;
+    }
+
+    .industry-feature-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-light-muted);
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .industry-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .industry-logo {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-light);
+      opacity: 0.7;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      background: linear-gradient(180deg, var(--bg) 0%, #f0e6ff 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
+    }
+
+    .service-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 16px 48px rgba(107, 33, 168, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-phase {
+      display: inline-block;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .service-title {
+      font-family: var(--font-serif);
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+      letter-spacing: 0.275px;
+    }
+
+    .service-desc {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ========== CASE STUDIES ========== */
+    .case-studies {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    .case-studies .section-title,
+    .case-studies .section-desc {
+      color: var(--text-light);
+    }
+
+    .case-studies .section-desc {
+      color: var(--text-light-muted);
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 640px) {
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+
+    .case-card {
+      background: var(--bg-darker);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .case-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .case-card-header {
+      background: linear-gradient(135deg, rgba(107, 33, 168, 0.3) 0%, rgba(15, 15, 26, 0.8) 100%);
+      padding: 1.5rem;
+      min-height: 120px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .case-card-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .case-card-body {
+      padding: 1.5rem;
+    }
+
+    .case-card-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .case-card-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      line-height: 1.33;
+      letter-spacing: -1.1px;
+    }
+
+    .case-card-text {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-light-muted);
+      line-height: 1.5;
+    }
+
+    /* ========== APPROACH ========== */
+    .approach {
+      background: #f8fafc;
+      padding: 100px 0;
+    }
+
+    .approach .section-header {
+      margin-bottom: 70px;
+    }
+
+    .approach .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    .approach .section-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 16px;
+      margin-bottom: 20px;
+    }
+
+    .approach .section-desc {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1000px) {
+      .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 50px 30px; }
+    }
+
+    @media (max-width: 600px) {
+      .approach-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .approach-item {
+      text-align: center;
+      padding: 0;
+    }
+
+    .approach-icon {
+      width: 64px;
+      height: 64px;
+      background: #ede9fe;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    .approach-icon svg {
+      width: 28px;
+      height: 28px;
+      color: #6b21a8;
+    }
+
+    .approach-title {
+      font-family: var(--font-serif);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .approach-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* ========== TEAM ========== */
+    .team {
+      background: linear-gradient(180deg, #f0e6ff 0%, var(--bg) 100%);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .team-grid { grid-template-columns: 1fr; }
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .team-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 12px 32px rgba(107, 33, 168, 0.1);
+    }
+
+    .team-avatar {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+
+    .team-name {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .team-role {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .team-exp {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ========== CTA BANNER ========== */
+    .cta-banner {
+      background: var(--bg-dark);
+      padding: 5rem 0;
+    }
+
+    .cta-inner {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 6vw, 60px);
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 8px;
+      line-height: 1.13;
+      letter-spacing: -0.32px;
+    }
+
+    .cta-title em { 
+      font-style: normal;
+      color: var(--accent-light);
+    }
+
+    .cta-desc {
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-light-muted);
+      margin-bottom: 2rem;
+    }
+
+    .cta-banner .btn-primary {
+      background: var(--accent);
+    }
+
+    .cta-banner .btn-primary:hover {
+      background: var(--accent-light);
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      background: var(--bg);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--accent);
+      transition: color var(--transition);
+    }
+
+    .contact-email:hover { color: var(--accent-light); }
+
+    .contact-locations {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .location {
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .location-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .location-address {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .contact-form-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+    }
+
+    .contact-form-wrap h4 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-form-wrap > p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-topics {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .form-topic {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 1rem;
+      background: var(--accent-soft);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .form-topic-num {
+      width: 24px;
+      height: 24px;
+      background: var(--accent);
+      color: var(--text-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    /* ========== EMAIL STRIP ========== */
+    .email-strip {
+      background: var(--orange);
+      padding: 1rem 0;
+    }
+
+    .email-strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .email-strip a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+    }
+
+    .email-strip a:hover { text-decoration: underline; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--bg-darker);
+      color: var(--text-light);
+      padding: 4rem 0 2rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 500px) {
+      .footer-top { grid-template-columns: 1fr; }
+    }
+
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .footer-logo-icon::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .footer-logo-text {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .footer-tagline {
+      font-size: 0.9rem;
+      color: var(--text-light-muted);
+      line-height: 1.6;
+    }
+
+    .footer-col h5 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-light-muted);
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover { color: var(--accent-light); }
+
+    .footer-bottom {
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-dark);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-light-muted);
+    }
+
+    .footer-tagline-final {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 600;
+      font-style: normal;
+      color: var(--text-light);
+      text-align: center;
+      padding: 3rem 0 1rem;
+      border-top: 1px solid var(--border-dark);
+      margin-top: 2rem;
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content > * {
+      animation: fadeUp 0.8s ease-out backwards;
+    }
+
+    .hero-eyebrow { animation-delay: 0.1s; }
+    .hero-title { animation-delay: 0.2s; }
+    .hero-desc { animation-delay: 0.3s; }
+    .hero-ctas { animation-delay: 0.4s; }
+    .hero-experience { animation-delay: 0.5s; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="logo">
+          <div class="logo-icon"></div>
+          <span class="logo-text">Stratus Partners</span>
+        </a>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#industries">Industries</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="header-cta">Book a Discovery Call</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Subtle abstract ribbons -->
+    <div class="hero-waves">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ribbon1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#c7d2fe;stop-opacity:0.4" />
+            <stop offset="100%" style="stop-color:#ddd6fe;stop-opacity:0.5" />
+          </linearGradient>
+          <linearGradient id="ribbon2" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#ddd6fe;stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#e9d5ff;stop-opacity:0.4" />
+          </linearGradient>
+          <linearGradient id="ribbon3" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#e9d5ff;stop-opacity:0.35" />
+            <stop offset="100%" style="stop-color:#f5d0fe;stop-opacity:0.3" />
+          </linearGradient>
+        </defs>
+        
+        <!-- Just 3 subtle ribbons -->
+        <path d="M-100,900 
+                 C-50,700 50,550 100,400 
+                 C150,250 100,100 180,-50 
+                 L280,-50 
+                 C200,100 250,250 200,400 
+                 C150,550 50,700 0,900 Z" 
+              fill="url(#ribbon1)" />
+        
+        <path d="M500,900 
+                 C580,700 680,550 750,380 
+                 C820,210 760,50 860,-100 
+                 L980,-100 
+                 C880,50 940,210 870,380 
+                 C800,550 700,700 620,900 Z" 
+              fill="url(#ribbon2)" />
+        
+        <path d="M1100,900 
+                 C1180,720 1280,580 1350,420 
+                 C1420,260 1380,80 1480,-80 
+                 L1580,-80 
+                 C1480,80 1520,260 1450,420 
+                 C1380,580 1280,720 1200,900 Z" 
+              fill="url(#ribbon3)" />
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-label">Technology Consulting</span>
+        <h1 class="hero-title">We build platforms that don't go down</h1>
+        <p class="hero-desc">Cloud infrastructure and DevOps expertise from HSBC, PayPal, and AWS — delivering enterprise reliability to African banks and fintechs.</p>
+        <a href="#contact" class="hero-cta">
+          Start a conversation
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO / STORY -->
+  <section class="intro" id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-content">
+          <div class="section-label">Our Story</div>
+          <h2 class="section-title">Global expertise, brought home</h2>
+          <p>The idea of Stratus Partners was conceived following discussions between our founders about the poor state of the Nigerian online banking space. One of us had tried to use a bank app, and for 3 days, there was downtime. This caused him to miss out on an opportunity.</p>
+          <p>Having lived in the United Kingdom for almost <strong>2 decades</strong> and worked in IT consulting for <strong>top commercial banks, FinTechs, government institutions and multinationals</strong> for over a decade, we decided to bring our wealth of knowledge and experience back home.</p>
+          <p>Our mission is to implement technology solutions that enable African blue-chips to provide <strong>world-class services</strong>, and to halt the prevalence of downtimes and unreliable systems in their online operations.</p>
+        </div>
+        <div class="intro-quote">
+          <blockquote>"SPL was registered as an Africa-focused technology consulting company, with an objective to implement solutions that will address the erratic performance of IT infrastructure and mobile apps in Africa."</blockquote>
+          <cite>— Stratus Partners Founding Team</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGOS -->
+  <section class="client-logos">
+    <div class="container">
+      <div class="logos-grid">
+        <span class="client-logo">HSBC</span>
+        <span class="client-logo">PayPal</span>
+        <span class="client-logo">AWS</span>
+        <span class="client-logo">Bank of England</span>
+        <span class="client-logo">European Central Bank</span>
+        <span class="client-logo">Rothschild & Co</span>
+        <span class="client-logo">Tesco Bank</span>
+        <span class="client-logo">Credit Suisse</span>
+        <span class="client-logo">Yorkshire Building Society</span>
+        <span class="client-logo">National Grid</span>
+      </div>
+      <div class="logos-cta">
+        <span>See the impact we deliver</span>
+        <a href="#experience" class="logos-cta-btn">→</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="industries" id="industries">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Industry Focus</div>
+        <h2 class="section-title">Where we add the most value</h2>
+        <p class="section-desc">We work best where uptime, regulation, and customer experience really matter.</p>
+      </div>
+      <div class="industries-layout">
+        <div class="industry-nav">
+          <div class="industry-nav-item active">Financial Services</div>
+          <div class="industry-nav-item">FinTech & Payments</div>
+          <div class="industry-nav-item">Government & Public Sector</div>
+          <div class="industry-nav-item">Regulators & Central Banks</div>
+          <div class="industry-nav-item">Telecoms</div>
+          <div class="industry-nav-item">Large Digital Products</div>
+        </div>
+        <div class="industry-feature">
+          <div class="industry-feature-img">
+            <div class="industry-stat">
+              <div class="industry-stat-number">20+</div>
+              <div class="industry-stat-label">Years combined experience<br>in financial services</div>
+            </div>
+          </div>
+          <div class="industry-feature-content">
+            <div class="industry-feature-tag">Financial Services</div>
+            <h3 class="industry-feature-title">From fragile estates to reliable, app-centric experiences</h3>
+            <p class="industry-feature-text">We help banks move away from brittle, manually operated systems toward cloud-native, automated platforms – supporting app-centric journeys, modern payments flows and data-driven decision-making.</p>
+            <div class="industry-logos">
+              <span class="industry-logo">HSBC</span>
+              <span class="industry-logo">Tesco Bank</span>
+              <span class="industry-logo">Rothschild</span>
+              <span class="industry-logo">Credit Suisse</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label">What We Do</div>
+        <h2 class="section-title">Cloud & DevOps services for real-world teams</h2>
+        <p class="section-desc">Our offerings follow two pillars – Consult & Architect and Build & Optimise – moving from assessment through implementation and continuous improvement.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="service-phase">Consult & Architect</span>
+          <h3 class="service-title">DevOps Capability Assessment</h3>
+          <p class="service-desc">A structured review of your DevOps practices across people, process, and tooling. Delivered in four phases: initial assessment, findings & recommendations, action plan, and progress tracking.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-phase">Consult & Architect</span>
+          <h3 class="service-title">Cloud Principles & Foundations</h3>
+          <p class="service-desc">Well-architected reviews, risk and security analysis, cost modelling, and target architectures implemented as code – creating a solid landing zone for product teams.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-phase">Build & Optimise</span>
+          <h3 class="service-title">Infrastructure Design & Engineering</h3>
+          <p class="service-desc">Building and deployment of automated self-healing infrastructure. When a server is down, another picks up immediately while the failed server self-repairs using historical data and insights.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-phase">Build & Optimise</span>
+          <h3 class="service-title">CI/CD & Deployment Optimisation</h3>
+          <p class="service-desc">Continuous Integration and Deployment pipelines that facilitate rapid delivery of code from developers to production without manual intervention, reducing errors and deployment cycles.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-phase">Build & Optimise</span>
+          <h3 class="service-title">Product Re-Engineering</h3>
+          <p class="service-desc">We remodel and modernise existing systems with APIs, containerization, and composability, to deliver efficient and adaptable platforms focused on your business needs.</p>
+        </article>
+        <article class="service-card">
+          <span class="service-phase">Build & Optimise</span>
+          <h3 class="service-title">Cloud Security & Compliance</h3>
+          <p class="service-desc">Implementing Continuous Cloud Compliance Frameworks for preventing risks, detecting issues in real-time, correcting/remediating risk events, and managing exemptions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="case-studies" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Team Experience</div>
+        <h2 class="section-title">Projects our team has delivered</h2>
+        <p class="section-desc">Our consultants have worked on some of the most complex and innovative projects for UK and international businesses.</p>
+      </div>
+      <div class="cases-grid">
+        <article class="case-card">
+          <div class="case-card-header">
+            <div class="case-card-logo">HSBC</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-tag">Cloud Architecture & Reliability</div>
+            <h3 class="case-card-title">Cloud-first strategy for a global bank</h3>
+            <p class="case-card-text">Set up 40+ live business services on AWS and Google. Implemented 30+ cloud services with core security controls, tooling and pipeline for global-scale cloud adoption.</p>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-card-header">
+            <div class="case-card-logo">PayPal</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-tag">Infrastructure Design</div>
+            <h3 class="case-card-title">Data insights platform for half a billion users</h3>
+            <p class="case-card-text">Delivered bespoke app giving executives unprecedented access to data insights. Built system with APIs delivering hundreds of thousands of data points from petabytes of data.</p>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-card-header">
+            <div class="case-card-logo">Bank of England</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-tag">Remediation & Deployment</div>
+            <h3 class="case-card-title">IT estate refresh for the UK's central bank</h3>
+            <p class="case-card-text">Completed remediation, testing and release of 1,500 applications across 2,000+ app landscape. Successfully refreshed the Bank's IT estate on time and within budget.</p>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-card-header">
+            <div class="case-card-logo">AWS</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-tag">DevOps & Auto-Scaling</div>
+            <h3 class="case-card-title">Self-healing EKS platform</h3>
+            <p class="case-card-text">Built elastic kubernetes service (EKS) platform for pension industry client, enabling rapid scale-up with auto-scaling and self-healing capabilities requiring no human intervention.</p>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-card-header">
+            <div class="case-card-logo">Rothschild & Co</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-tag">Cloud Migration</div>
+            <h3 class="case-card-title">Global cloud migration across 40 countries</h3>
+            <p class="case-card-text">Moved operations across 40+ countries to the cloud, created mobile app integrated with CRM now used by bankers worldwide for streamlined data sharing and real-time access.</p>
+          </div>
+        </article>
+        <article class="case-card">
+          <div class="case-card-header">
+            <div class="case-card-logo">Tesco Bank</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-card-tag">Product Re-Engineering</div>
+            <h3 class="case-card-title">Mobile app & online banking redesign</h3>
+            <p class="case-card-text">Redesigned mobile app and online banking to be more customer-focused, enabling the bank to better understand customer experiences and prevent user disruptions.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section class="approach">
+    <div class="container">
+      <div class="section-header centered">
+        <div class="section-label">Our Approach</div>
+        <h2 class="section-title">Cloud principles & continuous improvement</h2>
+        <p class="section-desc">We apply consistent cloud and DevOps principles – adapted pragmatically to your context – so platforms are sustainable and teams stay in control.</p>
+      </div>
+      <div class="approach-grid">
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+            </svg>
+          </div>
+          <div class="approach-title">Well-Architected by Default</div>
+          <p class="approach-desc">Regular reviews highlight operational risk, security gaps, and out-of-support technology, feeding into a prioritised improvement backlog.</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+            </svg>
+          </div>
+          <div class="approach-title">Everything as Code</div>
+          <p class="approach-desc">Infrastructure, pipelines, policies and dashboards defined as code using Terraform and cloud-native tooling for repeatability and governance.</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+            </svg>
+          </div>
+          <div class="approach-title">Governance with Visibility</div>
+          <p class="approach-desc">Centralised dashboards so leaders see impact in terms of risk, cost and customer experience – not just tickets and incidents.</p>
+        </div>
+        <div class="approach-item">
+          <div class="approach-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+            </svg>
+          </div>
+          <div class="approach-title">Continuous Improvement</div>
+          <p class="approach-desc">Regular retrospectives, Kaizen mindset and automation-first thinking rather than one-off "big bang" projects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="cta-title">Ready to improve your platform <em>reliability?</em></h2>
+        <p class="cta-desc">Start with a 10-day cloud & DevOps health check, complete with a 90-day prioritised roadmap.</p>
+        <a href="#contact" class="btn btn-primary">Book a discovery call <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Contact</div>
+          <h3>Tell us about your cloud or DevOps initiative</h3>
+          <p>For RFPs, formal tenders, or informal conversations, a short summary of your context and goals is enough for us to respond with a tailored proposal or discovery plan.</p>
+          <a href="/cdn-cgi/l/email-protection#64100105092417101605101117140516100a0116174a070b4a110f" class="contact-email"><span class="__cf_email__" data-cfemail="24504145496457505645505157544556504a4156570a474b0a514f">[email&#160;protected]</span> →</a>
+          <div class="contact-locations">
+            <div class="location">
+              <div class="location-label">United Kingdom</div>
+              <div class="location-address">36 Robin Crescent, Stanway<br>Colchester, CO3 8WL</div>
+            </div>
+            <div class="location">
+              <div class="location-label">Nigeria</div>
+              <div class="location-address">14 Oluwole Street, off Chief Collins Uchidiuno Street<br>Lekki Phase 1, Lagos</div>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <h4>What to include in your message</h4>
+          <p>Help us understand your situation so we can respond with a relevant proposal.</p>
+          <div class="form-topics">
+            <div class="form-topic">
+              <span class="form-topic-num">1</span>
+              <span>Where your platform and DevOps capability are today</span>
+            </div>
+            <div class="form-topic">
+              <span class="form-topic-num">2</span>
+              <span>The main outcomes you're targeting in the next 6–12 months</span>
+            </div>
+            <div class="form-topic">
+              <span class="form-topic-num">3</span>
+              <span>Any constraints around compliance, timelines, or budget</span>
+            </div>
+            <div class="form-topic">
+              <span class="form-topic-num">4</span>
+              <span>How you'd like us to engage (assessment, delivery partner, managed service)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL STRIP -->
+  <div class="email-strip">
+    <div class="container">
+      <div class="email-strip-inner">
+        <span>Ready to explore how DevOps and cloud can improve your reliability?</span>
+        <a href="/cdn-cgi/l/email-protection#a9ddccc8c4e9dadddbc8dddcdad9c8dbddc7ccdbda87cac687dcc2"><span class="__cf_email__" data-cfemail="710514101c3102050310050402011003051f1403025f121e5f041a">[email&#160;protected]</span> →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-icon"></div>
+            <span class="footer-logo-text">Stratus Partners</span>
+          </div>
+          <p class="footer-tagline">UK-registered, Africa-focused cloud and DevOps consultancy helping banks, fintechs, and institutions build reliable, secure platforms.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">DevOps Assessment</a></li>
+            <li><a href="#services">Cloud Foundations</a></li>
+            <li><a href="#services">Infrastructure Design</a></li>
+            <li><a href="#services">CI/CD Optimisation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Industries</h5>
+          <ul>
+            <li><a href="#industries">Financial Services</a></li>
+            <li><a href="#industries">FinTech & Payments</a></li>
+            <li><a href="#industries">Government</a></li>
+            <li><a href="#industries">Telecoms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-tagline-final">Building reliable platforms for Africa's digital future</p>
+        <p class="footer-copy">© 2025 Stratus Partners Limited. All rights reserved. UK Company Registration: 15789456</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Industry tabs interactive functionality
+    const industryData = {
+      "Financial Services": {
+        statNumber: "20+",
+        statLabel: "Years combined experience<br>in financial services",
+        tag: "Financial Services",
+        title: "From fragile estates to reliable, app-centric experiences",
+        text: "We help banks move away from brittle, manually operated systems toward cloud-native, automated platforms – supporting app-centric journeys, modern payments flows and data-driven decision-making.",
+        logos: ["HSBC", "Tesco Bank", "Rothschild", "Credit Suisse"]
+      },
+      "FinTech & Payments": {
+        statNumber: "10+",
+        statLabel: "Major programmes<br>across cards & payments",
+        tag: "FinTech & Payments",
+        title: "Modern platforms for high-growth FinTechs",
+        text: "We support FinTechs and payment providers with cloud-native architectures, observability and deployment pipelines that can handle rapid growth without compromising reliability or compliance.",
+        logos: ["PayPal", "Global Payments", "Issuers", "Acquirers"]
+      },
+      "Government & Public Sector": {
+        statNumber: "5+",
+        statLabel: "Critical programmes<br>in public sector",
+        tag: "Government & Public Sector",
+        title: "Modernising services for citizens and staff",
+        text: "Working within regulatory and procurement constraints, we help public bodies adopt DevOps, automation and cloud to deliver more reliable digital services for citizens and employees.",
+        logos: ["Central Government", "Agencies", "Regulators"]
+      },
+      "Regulators & Central Banks": {
+        statNumber: "4",
+        statLabel: "Major central bank /<br>regulator programmes",
+        tag: "Regulators & Central Banks",
+        title: "Trusted platforms for systemic institutions",
+        text: "We bring deep experience working with central banks and regulators, focusing on resilience, security, auditability and transparent change control for mission-critical systems.",
+        logos: ["Bank of England", "European Central Bank", "Supervisory bodies"]
+      },
+      "Telecoms": {
+        statNumber: "8+",
+        statLabel: "Years supporting<br>network-scale platforms",
+        tag: "Telecoms",
+        title: "Cloud & DevOps for always-on networks",
+        text: "We help telecoms and digital service providers build infrastructure that can absorb spikes in demand, recover quickly from failure and provide the observability needed for 24/7 operations.",
+        logos: ["Telco operators", "Digital service providers"]
+      },
+      "Large Digital Products": {
+        statNumber: "100M+",
+        statLabel: "End users served by<br>platforms we've supported",
+        tag: "Large Digital Products",
+        title: "Engineering for high-traffic digital products",
+        text: "From mobile apps to web platforms, we design and implement cloud architectures, CI/CD and reliability practices for products serving millions of users worldwide.",
+        logos: ["Consumer apps", "B2B platforms", "Marketplaces"]
+      }
+    };
+
+    // Grab DOM elements
+    const navItems = document.querySelectorAll(".industry-nav-item");
+    const statNumberEl = document.querySelector(".industry-stat-number");
+    const statLabelEl = document.querySelector(".industry-stat-label");
+    const tagEl = document.querySelector(".industry-feature-tag");
+    const titleEl = document.querySelector(".industry-feature-title");
+    const textEl = document.querySelector(".industry-feature-text");
+    const logosContainer = document.querySelector(".industry-logos");
+
+    function updateIndustry(name) {
+      const data = industryData[name];
+      if (!data) return;
+
+      statNumberEl.textContent = data.statNumber;
+      statLabelEl.innerHTML = data.statLabel;
+      tagEl.textContent = data.tag;
+      titleEl.textContent = data.title;
+      textEl.textContent = data.text;
+
+      // Rebuild logos
+      logosContainer.innerHTML = "";
+      data.logos.forEach((logo) => {
+        const span = document.createElement("span");
+        span.className = "industry-logo";
+        span.textContent = logo;
+        logosContainer.appendChild(span);
+      });
+    }
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        // Active state on left-hand list
+        navItems.forEach((i) => i.classList.remove("active"));
+        item.classList.add("active");
+
+        const key = item.textContent.trim();
+        updateIndustry(key);
+      });
+    });
+
+    // Ensure the first item matches the initial content on page load
+    const activeItem = document.querySelector(".industry-nav-item.active");
+    if (activeItem) {
+      updateIndustry(activeItem.textContent.trim());
+    }
+  </script>
+</body>
+</html>
